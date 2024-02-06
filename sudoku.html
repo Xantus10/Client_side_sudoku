@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="sudoku.js"></script>
+  <link rel="stylesheet" href="sudoku.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku</title>
+</head>
+<body onload="fillSudoku();">
+  <div class="container">
+    <div class="difficultySelector">
+      <div><p>Difficulty</p></div>
+      <div onclick="fillSudoku(30);"><p>Easy</p></div>
+      <div onclick="fillSudoku(40);"><p>Medium</p></div>
+      <div onclick="fillSudoku(50);"><p>Hard</p></div>
+    </div>
+    <div class="mainPage">
+      <h1>Sudoku</h1>
+      <p>Looking for some logic and fun?</p>
+      <div class="sudokuWrapper">
+        <div class="sudoku" id="i00" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i10" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i20" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i30" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i40" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i50" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i60" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i70" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i80" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i01" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i11" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i21" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i31" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i41" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i51" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i61" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i71" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i81" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i02" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i12" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i22" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i32" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i42" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i52" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i62" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i72" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i82" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i03" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i13" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i23" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i33" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i43" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i53" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i63" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i73" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i83" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i04" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i14" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i24" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i34" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i44" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i54" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i64" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i74" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i84" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i05" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i15" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i25" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i35" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i45" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i55" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i65" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i75" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i85" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i06" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i16" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i26" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i36" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i46" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i56" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i66" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i76" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i86" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i07" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i17" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i27" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i37" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i47" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i57" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i67" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i77" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i87" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i08" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i18" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i28" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i38" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i48" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i58" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i68" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i78" onclick="clicked(this);"></div>
+        <div class="sudoku" id="i88" onclick="clicked(this);"></div>
+      </div>
+      <p id="win"></p>
+    </div>
+  </div>
+</body>
+</html>
