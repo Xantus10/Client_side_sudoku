@@ -83,3 +83,42 @@ html {
   color: red;
   font-weight: 600;
 }
+
+.underSudokuWrapper {
+  width: 366px;
+  display: flex;
+  flex-direction: row;
+}
+
+.underSudokuWrapper div p {
+  color: black;
+  font-size: 18px;
+  margin: 0px;
+}
+
+.underSudokuWrapper div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.underSudokuWrapper div div {
+  width: 100px;
+  height: 50px;
+  background-color: black;
+  color: whitesmoke !important;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.underSudokuWrapper div div p {
+  color: inherit;
+}
+
+.underSudokuWrapper div div:hover {
+  background-color: whitesmoke;
+  color: black !important;
+}

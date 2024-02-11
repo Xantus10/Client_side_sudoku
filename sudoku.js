@@ -9,6 +9,7 @@ function fillSudoku(difficulty=30) {
   fillRemaining(0, 3);
   removeRandomDigits(difficulty);
   showWholeGrid();
+  document.getElementById("win").innerHTML = ""
 }
 
 
@@ -75,28 +76,28 @@ function roundToThree(num) {
 }
 
 function fillRemaining(i, j) {
+  // If we reached the end
   if (i === 8 && j === 9) {
-      return true;
+    return true;
   }
-
+  // On end of row move to the next one
   if (j === 9) {
-      i += 1;
-      j = 0;
+    i += 1;
+    j = 0;
   }
-
-
+  // If the value is already filled in
   if (sudoku[i][j] !== 0) {
-      return fillRemaining(i, j + 1);
+    return fillRemaining(i, j + 1);
   }
-
+  // Try to fill in a value and if later it finds this value is not acceptable it will return and try another one
   for (let num = 1; num <= 9; num++) {
-      if (checkRow(i, num) && checkColumn(j, num) && checkSquare(roundToThree(i), roundToThree(j), num)) {
-          sudoku[i][j] = num;
-          if (fillRemaining(i, j + 1)) {
-              return true;
-          }
-          sudoku[i][j] = 0;
+    if (checkRow(i, num) && checkColumn(j, num) && checkSquare(roundToThree(i), roundToThree(j), num)) {
+      sudoku[i][j] = num;
+      if (fillRemaining(i, j + 1)) {
+        return true;
       }
+      sudoku[i][j] = 0;
+    }
   }
 
   return false;
@@ -196,6 +197,27 @@ function freezeBoard() {
 }
 
 
+function zeroOutGrid() {
+  for (let i=0; i<9; i++) {
+    for (let j=0; j<9; j++) {
+      if (!document.getElementById("i"+String(i)+String(j)).classList.contains("notChangable")) {
+        sudoku[i][j] = 0;
+      }
+    }
+  }
+}
+
+
+function solveSudoku() {
+  zeroOutGrid();
+  fillRemaining(0, 0);
+  showWholeGrid();
+  if (checkWin()) {
+    document.getElementById("win").innerHTML = "And thats the solution!"
+  }
+}
+
+
 function clicked(caller) {
   if (!caller.classList.contains("notChangable")) {
     let currentVal = Number(caller.innerHTML);
@@ -209,7 +231,7 @@ function clicked(caller) {
     }
     if (checkWin()) {
       freezeBoard();
-      document.getElementById("win").innerHTML = "Congratulations! You won."
+      document.getElementById("win").innerHTML = "Congratulations!"
     }
   }
 }
